@@ -1,0 +1,9 @@
+.adapterMixin(@index) when (@index>0){
+  @media (min-width: extract(@adapterDeviceList,@index)) {
+    html{
+      //获得数组中该元素的长度,index从1开始
+      font-size: @baseFontSize / @padWidth * extract(@adapterDeviceList,@index);
+    }
+  }
+  .adapterMixin( @index - 1 );
+}
